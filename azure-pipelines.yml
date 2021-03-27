@@ -3,6 +3,9 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+variables:
+- group: somegroup
+
 trigger:
 - master
 
@@ -16,4 +19,5 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
+    echo a+b=${{$(a)+$(b)}}
   displayName: 'Run a multi-line script'
