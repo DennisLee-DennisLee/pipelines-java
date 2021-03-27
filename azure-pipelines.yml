@@ -21,5 +21,5 @@ steps:
     echo See https://aka.ms/yaml
     echo a=$(a)
     echo b=$(b)
-    echo contososecret=$(contososecret)
+    echo contososecret=$(env:contososecret)
   displayName: 'Run a multi-line script'
