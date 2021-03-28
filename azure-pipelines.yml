@@ -11,6 +11,8 @@ variables:
   value: $[variables.b]
 - name: vc
   value: $[variables.c]
+- name: vcontososecret
+  value: $[variables.contososecret]
 
 trigger:
 - master
@@ -38,4 +40,4 @@ steps:
   displayName: 'Run one multi-line script'
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-    CONTOSO_SECRET: $(contososecret)
+    CONTOSO_SECRET: $(vcontososecret)
