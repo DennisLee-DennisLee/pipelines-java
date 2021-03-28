@@ -38,4 +38,4 @@ steps:
   displayName: 'Run one multi-line script'
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-    CONTOSO_SECRET: $[variables.contososecret]
+    CONTOSO_SECRET: $(contososecret)
