@@ -23,6 +23,8 @@ steps:
     echo b=$(b)
     echo c=$(c)
     echo contososecret=$CONTOSO_SECRET
+    echo is a less than b? $[lt($(a), $(b))]
+    echo is b less than c? $[lt($(b), $(c))]
     echo is a less than contososecret? $[lt($(a), $CONTOSO_SECRET)]
     echo is b less than contososecret? $[lt($(b), $CONTOSO_SECRET)]
     echo is c less than contososecret? $[lt($(c), $CONTOSO_SECRET)]
