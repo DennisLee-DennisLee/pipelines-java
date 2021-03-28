@@ -5,11 +5,11 @@
 
 variables:
 - group: somegroup
-- name: a
+- name: va
   value: $[variables.a]
-- name: b
+- name: vb
   value: $[variables.b]
-- name: c
+- name: vc
   value: $[variables.c]
 
 trigger:
@@ -25,15 +25,15 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    echo a=$(a)
-    echo b=$(b)
-    echo c=$(c)
+    echo a=$(va)
+    echo b=$(vb)
+    echo c=$(vc)
     echo contososecret=$CONTOSO_SECRET
     echo contososecret=$env:CONTOSO_SECRET
     echo contososecret=env:$CONTOSO_SECRET
-    echo Is a less than b? ${{ lt(variables.a, variables.b) }}
-    echo Is a equal to b? ${{ eq(variables.a, variables.b) }}
-    echo Is a greater than b? ${{ gt(variables.a, variables.b) }}
+    echo Is a less than b? ${{ lt(variables.va, variables.vb) }}
+    echo Is a equal to b? ${{ eq(variables.va, variables.vb) }}
+    echo Is a greater than b? ${{ gt(variables.va, variables.vb) }}
   displayName: 'Run one multi-line script'
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
