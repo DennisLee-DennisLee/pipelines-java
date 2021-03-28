@@ -29,12 +29,13 @@ steps:
     echo b=$(vb)
     echo c=$(vc)
     echo contososecret=$CONTOSO_SECRET
-    echo contososecret=$env:CONTOSO_SECRET
-    echo contososecret=env:$CONTOSO_SECRET
     echo Is a less than b? ${{ lt(variables.va, variables.vb) }}
     echo Is a equal to b? ${{ eq(variables.va, variables.vb) }}
     echo Is a greater than b? ${{ gt(variables.va, variables.vb) }}
+    echo Is a less than contososecret? ${{ lt(variables.va, variables.CONTOSO_SECRET) }}
+    echo Is b less than contososecret? ${{ lt(variables.vb, variables.CONTOSO_SECRET) }}
+    echo Is c less than contososecret? ${{ lt(variables.vc, variables.CONTOSO_SECRET) }}
   displayName: 'Run one multi-line script'
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-    CONTOSO_SECRET: $(contososecret)
+    CONTOSO_SECRET: $[variables.contososecret]
