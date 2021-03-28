@@ -25,9 +25,9 @@ steps:
     echo contososecret=$CONTOSO_SECRET
     echo contososecret=$env:CONTOSO_SECRET
     echo contososecret=env:$CONTOSO_SECRET
-    echo is a less than b? ${{ lt(variables.a, variables.b) }}
-    echo is a equal to b? ${{ eq(variables.a, variables.b) }}
-    echo is a greater than b? ${{ gt(variables.a, variables.b) }}
+    echo Is a less than b? ${{ lt(variables.somegroup.a, variables.somegroup.b) }}
+    echo Is a equal to b? ${{ eq(variables.somegroup.a, variables.somegroup.b) }}
+    echo Is a greater than b? ${{ gt(variables.somegroup.a, variables.somegroup.b) }}
   displayName: 'Run one multi-line script'
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
