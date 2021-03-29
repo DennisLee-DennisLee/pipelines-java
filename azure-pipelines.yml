@@ -34,9 +34,9 @@ steps:
     echo Is a less than b? ${{ lt(variables.va, variables.vb) }}
     echo Is a equal to b? ${{ eq(variables.va, variables.vb) }}
     echo Is a greater than b? ${{ gt(variables.va, variables.vb) }}
-    echo Is a less than contososecret? ${{ lt(variables.va, $CONTOSO_SECRET) }}
-    echo Is b less than contososecret? ${{ lt(variables.vb, $CONTOSO_SECRET) }}
-    echo Is c less than contososecret? ${{ lt(variables.vc, $CONTOSO_SECRET) }}
+    echo Is a less than contososecret? ${{ lt(variables.va, variables.vcontososecret) }}
+    echo Is b less than contososecret? ${{ lt(variables.vb, variables.vcontososecret) }}
+    echo Is c less than contososecret? ${{ lt(variables.vc, variables.vcontososecret) }}
   displayName: 'Run one multi-line script'
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
