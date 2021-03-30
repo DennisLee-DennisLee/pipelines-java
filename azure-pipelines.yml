@@ -43,8 +43,8 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    echo Pool image: $(image)
-    echo Run tests? $(test)
+    echo Pool image: ${{ parameters.image }}
+    echo Run tests? ${{ parameters.test }}
     echo a=$(va)
     echo b=$(vb)
     echo c=$(vc)
