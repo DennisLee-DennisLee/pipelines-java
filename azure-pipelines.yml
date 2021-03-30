@@ -3,6 +3,22 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+parameters:
+- name: image
+  displayName: Pool Image
+  default: ubuntu-latest
+  values:
+  - windows-latest
+  - vs2017-win2016
+  - ubuntu-latest
+  - ubuntu-16.04
+  - macOS-latest
+  - macOS-10.14
+- name: test
+  displayName: Run Tests?
+  type: boolean
+  default: false
+
 variables:
 - group: somegroup
 - name: va
@@ -27,6 +43,8 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
+    echo Pool image: $(image)
+    echo Run tests? $(test)
     echo a=$(va)
     echo b=$(vb)
     echo c=$(vc)
