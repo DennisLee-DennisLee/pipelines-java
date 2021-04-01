@@ -35,12 +35,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - script: |
+    echo Hello, world!
     echo Pool image: ${{ parameters.image }}
     echo Run tests? ${{ parameters.test }}
+  displayName: 'Show runtime parameter values'
+
+- script: |
     echo a=$(va)
     echo b=$(vb)
     echo contososecret=$(vcontososecret)
@@ -49,6 +50,6 @@ steps:
     echo Is a greater than b? ${{ gt(variables.va, variables.vb) }}
     echo Is a greater than contososecret? ${{ gt(variables.va, variables.vcontososecret) }}
     echo Is b greater than contososecret? ${{ gt(variables.vb, variables.vcontososecret) }}
-  displayName: 'Run one multi-line script'
+  displayName: 'Test variable group variables (secret and nonsecret)'
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
