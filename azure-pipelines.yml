@@ -53,7 +53,7 @@ steps:
     echo Is a less than contososecret? ${{ lt(variables.va, variables.vcontososecret) }}
     echo Is b less than contososecret? ${{ lt(variables.vb, variables.vcontososecret) }}
     echo
-    for number in {1..$contososecret}
+    for number in {1..$(contososecret)}
     do
     echo $number
     done
