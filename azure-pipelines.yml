@@ -30,11 +30,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: |
-    echo Hello, world!
-    echo Pool image: ${{ parameters.image }}
-    echo Run tests? ${{ parameters.test }}
-  displayName: 'Show runtime parameter values'
+# - script: |
+#     echo Hello, world!
+#     echo Pool image: ${{ parameters.image }}
+#     echo Run tests? ${{ parameters.test }}
+#   displayName: 'Show runtime parameter values'
 
 - script: |
     echo a=$(va)
