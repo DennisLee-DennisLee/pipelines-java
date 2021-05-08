@@ -40,13 +40,6 @@ steps:
     echo "a=$(va)"
     echo "b=$(vb)"
     echo "contososecret=$(vcontososecret)"
-    echo "Is a less than b? ${{ lt(variables.va, variables.vb) }}"
-    echo "Is a equal to b? ${{ eq(variables.va, variables.vb) }}"
-    echo "Is a greater than b? ${{ gt(variables.va, variables.vb) }}"
-    echo "Is a greater than contososecret? ${{ gt(variables.va, variables.vcontososecret) }}"
-    echo "Is b greater than contososecret? ${{ gt(variables.vb, variables.vcontososecret) }}"
-    echo "Is a less than contososecret? ${{ lt(variables.va, variables.vcontososecret) }}"
-    echo "Is b less than contososecret? ${{ lt(variables.vb, variables.vcontososecret) }}"
     echo
     echo "Count up to the value of the variable group's nonsecret variable *a*:"
     for number in {1..$(va)}
